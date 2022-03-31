@@ -25,7 +25,7 @@ public class Move : Actions
     void Actions.Update()
     {
         Debug.Log("Move");
-        player.GetComponent<Player>().Move(direction);
+        player.GetComponent<PlayerMovement>().Move(direction);
     }
 }
 
@@ -36,7 +36,7 @@ public class Jump : Actions
     void Actions.Update()
     {
         Debug.Log("Jump");
-        player.GetComponent<Player>().Jump();
+        player.GetComponent<PlayerMovement>().Jump();
     }
 }
 

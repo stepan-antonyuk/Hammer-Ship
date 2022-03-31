@@ -6,6 +6,9 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    
+    // User state
+    public float _walkSpeed = 80f; // letter change to private
 
     // Start is called before the first frame update
     void Start()
@@ -26,11 +29,11 @@ public class PlayerMovement : MonoBehaviour
     
     public void Move(float direction)
     {
-        controller.Move(direction * Time.fixedDeltaTime, false, false); //fixedDeltaTime for FixedUpdate and deltaTime for Update
+        controller.Move(direction * _walkSpeed * Time.fixedDeltaTime, false, false); //fixedDeltaTime for FixedUpdate and deltaTime for Update
     }    
     
     public void Jump()
     {
-
+        controller.Move(0f, false, true);
     }
 }

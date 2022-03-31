@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 166114161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CeilingCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -293,7 +293,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 459103661}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,10 +862,9 @@ GameObject:
   - component: {fileID: 842315707}
   - component: {fileID: 842315702}
   - component: {fileID: 842315701}
-  - component: {fileID: 842315704}
   - component: {fileID: 842315706}
   - component: {fileID: 842315705}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -953,7 +952,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 842315699}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f8547b96fec89dd1cb35ff369e01f8c5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -986,21 +985,6 @@ Transform:
   m_Father: {fileID: 1450099028}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &842315704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842315699}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdaab94adaa4ca4ae9ec96ef7b54ee11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidBody2D: {fileID: 842315701}
-  Direction: {x: 0, y: 0}
-  Speed: {x: 0, y: 0}
 --- !u!114 &842315705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,6 +998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 842315706}
+  _walkSpeed: 80
 --- !u!114 &842315706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1026,13 +1011,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad88117ec589b5868a1007470bbba561, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_JumpForce: 400
-  m_CrouchSpeed: 0.36
+  m_JumpForce: 700
+  m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
-  m_AirControl: 0
+  m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 55
   m_GroundCheck: {fileID: 459103661}
   m_CeilingCheck: {fileID: 166114161}
   m_CrouchDisableCollider: {fileID: 0}
@@ -1051,7 +1036,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 842315699}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f8547b96fec89dd1cb35ff369e01f8c5, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
