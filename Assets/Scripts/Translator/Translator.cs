@@ -5,7 +5,8 @@ using UnityEngine;
 public class Translator : MonoBehaviour
 {
 
-    private Dictionary<KeyCode, Actions> attributes;   
+    private Dictionary<KeyCode, Actions> attributes;
+    private List<Actions> events = new List<Actions>(); 
     
     // Start is called before the first frame update
     void Start()
@@ -25,45 +26,22 @@ public class Translator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach (var key in ActionManager.keyMaps)
+        foreach (var key in attributes.Keys)
         {
             if (Input.GetKey(key))
             {
-                attributes[key].FixedUpdate(); // Update or FixedUpdate
+                //attributes[key].FixedUpdate(); // Update or FixedUpdate
+                events.Add(attributes[key]);
             }
         }
     }
     
-}
-
-/*
-public interface Action
-{
-    void Update();
-}
-
-public class Move : Action
-{
-    void Action.Update()
+    void FixedUpdate()
     {
-        Debug.Log("Move");
+        foreach (var action in events)
+        {
+            action.Update(); // Update or FixedUpdate
+        }
     }
+    
 }
-
-public class Jump : Action
-{
-    void Action.Update()
-    {
-        Debug.Log("Jump");
-    }
-}
-
-public class Turn : Action
-{
-    void Action.Update()
-    {
-        Debug.Log("Turn");
-    }
-}
-*/
-

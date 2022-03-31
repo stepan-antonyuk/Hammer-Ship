@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface Actions
 {
-    void FixedUpdate(); // Update or FixedUpdate
+    void Update(); // Update or FixedUpdate
 }
 
 public class Move : Actions
@@ -22,7 +22,7 @@ public class Move : Actions
         this.direction = 0f;
     }
     
-    void Actions.FixedUpdate()
+    void Actions.Update()
     {
         Debug.Log("Move");
         player.GetComponent<Player>().Move(direction);
@@ -33,7 +33,7 @@ public class Jump : Actions
 {
     public GameObject player = GameObject.Find("Player");
     
-    void Actions.FixedUpdate()
+    void Actions.Update()
     {
         Debug.Log("Jump");
         player.GetComponent<Player>().Jump();
@@ -42,7 +42,7 @@ public class Jump : Actions
 
 public class Turn : Actions
 {
-    void Actions.FixedUpdate()
+    void Actions.Update()
     {
         Debug.Log("Turn");
     }
