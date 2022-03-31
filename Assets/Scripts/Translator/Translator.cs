@@ -6,7 +6,6 @@ public class Translator : MonoBehaviour
 {
 
     private Dictionary<KeyCode, Actions> attributes;
-    private List<Actions> events = new List<Actions>(); 
     
     // Start is called before the first frame update
     void Start()
@@ -21,28 +20,16 @@ public class Translator : MonoBehaviour
             {KeyCode.LeftShift, new Jump()}
         };
     }
-
-
-    // Update is called once per frame
-    void Update()
+    
+    void FixedUpdate()
     {
         foreach (var key in attributes.Keys)
         {
             if (Input.GetKey(key))
             {
-                //attributes[key].FixedUpdate(); // Update or FixedUpdate
-                events.Add(attributes[key]);
+                attributes[key].Update();
             }
         }
-    }
-    
-    void FixedUpdate()
-    {
-        foreach (var action in events)
-        {
-            action.Update(); // Update or FixedUpdate
-        }
-        events = new List<Actions>(); // makes list of events empty
     }
     
 }
