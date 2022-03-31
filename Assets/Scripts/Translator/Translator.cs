@@ -42,6 +42,7 @@ public class Translator : MonoBehaviour
         {
             action.Update(); // Update or FixedUpdate
         }
+        events = new List<Actions>(); // makes list of events empty
     }
     
 }
