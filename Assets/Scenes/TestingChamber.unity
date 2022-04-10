@@ -1124,7 +1124,6 @@ GameObject:
   - component: {fileID: 842315707}
   - component: {fileID: 842315702}
   - component: {fileID: 842315701}
-  - component: {fileID: 842315706}
   - component: {fileID: 842315705}
   m_Layer: 8
   m_Name: Player
@@ -1259,20 +1258,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87266cc10b052bdfaafbaee019b925a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 842315706}
-  _walkSpeed: 40
---- !u!114 &842315706
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 842315699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad88117ec589b5868a1007470bbba561, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   m_JumpForce: 250
   m_CrouchSpeed: 0.4
   m_MovementSmoothing: 0.05
@@ -1283,6 +1268,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 459103661}
   m_CeilingCheck: {fileID: 166114161}
   m_CrouchDisableCollider: {fileID: 0}
+  _walkSpeed: 8
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -1298,7 +1284,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 842315699}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 2abd5fa416c78f7d5b162c88b88ecdf2, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
