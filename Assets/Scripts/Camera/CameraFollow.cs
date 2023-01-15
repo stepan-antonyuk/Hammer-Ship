@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform Player;
-    public float dampTime = 0.4f; // Time it take to raed the player position
+    public float dampTime = 0.4f; // Time it take to read the player position
     public float zScore = -10f;
     private Vector3 cameraPos;
     private Vector3 velocity = Vector3.zero;
